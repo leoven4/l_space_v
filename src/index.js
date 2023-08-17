@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { HashRouter as Router } from "react-router-dom";
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router base="/">
       <App />
     </Router>
   </React.StrictMode>,
