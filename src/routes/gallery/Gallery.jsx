@@ -7,10 +7,10 @@ import "./gallery.scss"
 // import google from "googleapis"
 // const {google} = require('googleapis');
 
-//const CLIENT_ID = '532655881892-spmpdqobv1lll1ng2cuj777r4o7c0ghh.apps.googleusercontent.com';
-//const CLIENT_SECRET = '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';
+//const CLIENT_ID = '';
+//const CLIENT_SECRET = '';
 //const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
-//const REFRESH_TOKEN = '1//04Cg9Fcv5L0mLCgYIARAAGAQSNwF-L9IryOqvzZd7XkrL4fesrh1r2cI3aR8rN_MxqNM9CKO-BDd0bcqn87w4cqRv9tEyzRfkAFc';
+//const REFRESH_TOKEN = '';
 
 const Gallery = () => {
   const [openItem1, setOpenItem1] = useState(false);
