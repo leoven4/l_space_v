@@ -3,11 +3,25 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import GalleryItem from "../../components/gallery_item/gallery_item";
 import "./gallery.scss"
+// import { GoogleApis as google} from "googleapis";
+// import google from "googleapis"
+// const {google} = require('googleapis');
+
+//const CLIENT_ID = '532655881892-spmpdqobv1lll1ng2cuj777r4o7c0ghh.apps.googleusercontent.com';
+//const CLIENT_SECRET = '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';
+//const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
+//const REFRESH_TOKEN = '1//04Cg9Fcv5L0mLCgYIARAAGAQSNwF-L9IryOqvzZd7XkrL4fesrh1r2cI3aR8rN_MxqNM9CKO-BDd0bcqn87w4cqRv9tEyzRfkAFc';
 
 const Gallery = () => {
   const [openItem1, setOpenItem1] = useState(false);
   const [openItem2, setOpenItem2] = useState(false);
 
+  //const oauth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
+
+  //oauth2Client.setCredetials({refresh_token:REFRESH_TOKEN});
+  //const drive = google.drive({version: 'v3', auth: oauth2Client});
+
+  //console.log(drive);
 
   const item1 = {
     name: "item1",
