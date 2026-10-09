@@ -1,10 +1,136 @@
-.home_image {
-  margin: auto;
-  width: 80%;
-  height: 80%;
-  padding: 10px;
+.home_page {
+  max-width: 1280px;
+  margin: 0 auto;
+  color: #27232c;
+}
+
+.home_hero {
+  min-height: min(690px, calc(100vh - 140px));
+  display: grid;
+  grid-template-columns: 1.04fr 0.96fr;
+  align-items: center;
+  gap: clamp(32px, 7vw, 92px);
+  padding: 24px 4vw 56px;
+}
+
+.home_copy {
+  max-width: 590px;
+
+  .home_eyebrow {
+    margin: 0 0 24px;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 0;
+    max-width: 12ch;
+    font-size: clamp(2.7rem, 5.6vw, 5.1rem);
+    line-height: 1.08;
+    font-weight: 400;
+    letter-spacing: -0.055em;
+  }
+
+  .home_intro {
+    max-width: 54ch;
+    margin: 28px 0 30px;
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: 1.85;
+  }
+}
+
+.home_cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  padding: 15px 20px;
+  background: #28232d;
+  color: white;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  transition: transform 160ms ease, background 160ms ease;
+
+  span { font-size: 1.1rem; }
+
+  &:hover {
+    transform: translateY(-2px);
+    background: #493b52;
+  }
+}
+
+.home_visual {
+  min-height: 470px;
+  height: min(58vw, 610px);
+  position: relative;
+  overflow: hidden;
+  background-color: #b8a795;
+  background-image:
+    linear-gradient(180deg, rgba(35, 28, 25, 0) 55%, rgba(35, 28, 25, 0.35) 100%),
+    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85");
+  background-position: center;
+  background-size: cover;
+  box-shadow: 18px 18px 0 rgba(255, 255, 255, 0.28);
+}
+
+.home_visual_note {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  color: #fff;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+
+.home_invitation {
   display: flex;
-  flex-wrap: wrap;
-  // background-image: url("sketch.png");
-  // background-image: url("https://media.istockphoto.com/id/1212722165/vector/sketch-the-room-office-chair-desk-various-objects-on-the-table-sketch-workspace-vector.jpg?s=612x612&w=0&k=20&c=52gYh4i9Kqhlzc_zxqXEvImnQ4BZrLO-WFa0fI8fG_8=")
+  align-items: center;
+  gap: 22px;
+  margin: 0 4vw 28px;
+  padding: 22px 0;
+  border-top: 1px solid rgba(39, 35, 44, 0.32);
+  font-size: 0.85rem;
+
+  p { margin: 0; }
+
+  a {
+    margin-left: auto;
+    white-space: nowrap;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 3px;
+  }
+}
+
+.home_invitation_mark { font-size: 1.4rem; }
+
+@media (max-width: 760px) {
+  .home_hero {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 26px 2vw 46px;
+  }
+
+  .home_visual {
+    min-height: 360px;
+    height: 75vw;
+  }
+
+  .home_invitation {
+    flex-wrap: wrap;
+    margin-inline: 2vw;
+
+    a { margin-left: 42px; }
+  }
+}
+
+@media (max-width: 420px) {
+  .home_visual { min-height: 300px; }
+
+  .home_invitation {
+    gap: 12px;
+    font-size: 0.77rem;
+
+    a { margin-left: 30px; }
+  }
 }
