@@ -13,52 +13,50 @@ import "./gallery.scss"
 //const REFRESH_TOKEN = '';
 
 const Gallery = () => {
-  const [openItem1, setOpenItem1] = useState(false);
-  const [openItem2, setOpenItem2] = useState(false);
+  const [openItem, setOpenItem] = useState(null);
+  const people = [
+    {
+      name: "Portrait 1",
+      imageUrl: "https://images.unsplash.com/photo-1718964382789-57b24c5c4b97?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Portrait 2",
+      imageUrl: "https://images.unsplash.com/photo-1642243947382-524cecf14085?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Portrait 3",
+      imageUrl: "https://images.unsplash.com/photo-1598292254404-da6a31f7fa75?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Portrait 4",
+      imageUrl: "https://images.unsplash.com/photo-1593501273289-354b4fcf3add?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Portrait 5",
+      imageUrl: "https://images.unsplash.com/photo-1676540267447-cbdb50628d28?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Portrait 6",
+      imageUrl: "https://images.unsplash.com/photo-1576695444267-40cdd214f06e?auto=format&fit=crop&w=900&q=80",
+    },
+  ];
 
-  //const oauth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
-
-  //oauth2Client.setCredetials({refresh_token:REFRESH_TOKEN});
-  //const drive = google.drive({version: 'v3', auth: oauth2Client});
-
-  //console.log(drive);
-
-  const item1 = {
-    name: "item1",
-    imageUrl: "https://drive.google.com/uc?export=view&id=1R_cHu1oISQDLiCVD3En8odwfWXBFdf9E",
-    setOpen: setOpenItem1,
-    slides: [
-      { src: "https://drive.google.com/uc?export=view&id=1R_cHu1oISQDLiCVD3En8odwfWXBFdf9E" },
-      { src: "https://drive.google.com/uc?export=view&id=1F-85yEICXOKIsIWTOeVy7xeyAzjeMFN-" },
-      { src: "https://drive.google.com/uc?export=view&id=1HL24_X81TzrMYvb8K9px0O-jZ1Gz9jSt" }]
-  }
-
-
-  const item2 = {
-    name: "item2",
-    imageUrl: "https://drive.google.com/uc?export=view&id=1F-85yEICXOKIsIWTOeVy7xeyAzjeMFN-",
-    setOpen: setOpenItem2,
-    slides: [
-      { src: "https://drive.google.com/uc?export=view&id=1R_cHu1oISQDLiCVD3En8odwfWXBFdf9E" },
-      { src: "https://drive.google.com/uc?export=view&id=1F-85yEICXOKIsIWTOeVy7xeyAzjeMFN-" },
-      { src: "https://drive.google.com/uc?export=view&id=1HL24_X81TzrMYvb8K9px0O-jZ1Gz9jSt" }]
-  }
+  const slides = people.map(({ imageUrl }) => ({ src: imageUrl }));
 
 
   return (
     <div className="gallery_wrapper">
-      <GalleryItem item={item1} />
+      {people.map((person, index) => (
+        <GalleryItem
+          key={person.name}
+          item={{ ...person, setOpen: () => setOpenItem(index) }}
+        />
+      ))}
       <Lightbox
-        open={openItem1}
-        close={() => setOpenItem1(false)}
-        slides={item1.slides}
-      />
-
-      <GalleryItem item={item2} />
-      <Lightbox
-        open={openItem2}
-        close={() => setOpenItem2(false)}
-        slides={item2.slides}
+        open={openItem !== null}
+        close={() => setOpenItem(null)}
+        slides={slides}
+        index={openItem ?? 0}
       />
 
     </div>
