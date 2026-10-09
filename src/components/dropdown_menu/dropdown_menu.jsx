@@ -10,7 +10,7 @@ function DropdownMenu() {
             <DropdownButton renderMenuOnMount={Boolean(true)} align="end" title="⎵" id="dropdown-menu-align-end">
                 <div className='dropdown_items'>
                     <Dropdown.Item><Link to="">Intro</Link></Dropdown.Item>
-                    <Dropdown.Item><Link to="">Words</Link></Dropdown.Item>
+                    <Dropdown.Item><Link to="/words">Words</Link></Dropdown.Item>
                     <Dropdown.Item><Link to="/gallery">Images</Link></Dropdown.Item>
                     <Dropdown.Divider />
                     <Dropdown.Item><Link to="">Music</Link></Dropdown.Item>
