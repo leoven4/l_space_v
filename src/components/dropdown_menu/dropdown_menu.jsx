@@ -13,7 +13,7 @@ function DropdownMenu() {
                     <Dropdown.Item><Link to="/words">Words</Link></Dropdown.Item>
                     <Dropdown.Item><Link to="/gallery">Images</Link></Dropdown.Item>
                     <Dropdown.Divider />
-                    <Dropdown.Item><Link to="">Music</Link></Dropdown.Item>
+                    <Dropdown.Item><Link to="/music">Music</Link></Dropdown.Item>
                 </div>
             </DropdownButton>
         </div>
